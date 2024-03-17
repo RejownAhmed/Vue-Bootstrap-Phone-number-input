@@ -1,7 +1,9 @@
-# Vue 3 + Vite
+# Simple Vue boostrap phone number input
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a simple phone number input with country code picker created with Vue 3 js and Bootstrap 5. We are working on a video so that you can build your own by understanding the core logics and functionality. 
 
-## Recommended IDE Setup
+To watch the videos keep following us on [facebook](https://www.facebook.com/brightyouthacademy) and [youtube](https://www.youtube.com/@brightyouthacademy)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Video links
+
+- Comming soon
