@@ -1,6 +1,5 @@
 <script setup>
 import countryCodePicker from "./countryCodePicker.vue";
-import countries from "../utils/country";
 import { ref, watch } from "vue";
 
 const phoneCountry = defineModel("phoneCountry", {
@@ -22,7 +21,6 @@ const updateValues = () => {
 
 const selectCountry = (country) => {
   selectedCountry.value = country;
-  updateValues();
 };
 
 watch([phoneNumber, selectedCountry], ()=> {
