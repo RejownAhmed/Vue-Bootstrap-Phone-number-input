@@ -1,11 +1,8 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
+import countries from "../utils/country";
 
 const props = defineProps({
-  countries: {
-    type: Array,
-    required: true
-  },
   defaultCountry: String
 });
 
@@ -17,7 +14,7 @@ const searchQuery = ref("");
 
 const filteredcountries = computed(() => {
     if (searchQuery.value) {
-      return props.countries.filter((code) => {
+      return countries.filter((code) => {
         const searchLower = searchQuery.value.toLowerCase();
         let foundMatch = false;
         const checkObject = (obj) => {
@@ -36,7 +33,7 @@ const filteredcountries = computed(() => {
         return foundMatch;
       });
     }
-    return props.countries;
+    return countries;
 });
 
 const selectCountry = (country)=> {
@@ -45,9 +42,9 @@ const selectCountry = (country)=> {
 }
 
 watch(()=> props.defaultCountry, ()=>{
-    let country = props.countries[0];
+    let country = countries[0];
     if (props.defaultCountry) {
-      country = props.countries.filter(o => o.code.toString().toLowerCase() === props.defaultCountry.toString().toLowerCase())[0]
+      country = countries.filter(o => o.code.toString().toLowerCase() === props.defaultCountry.toString().toLowerCase())[0]
     }
     
     selectCountry(country);
