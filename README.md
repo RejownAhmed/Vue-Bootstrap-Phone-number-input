@@ -6,4 +6,5 @@ To watch the videos keep following us on [facebook](https://www.facebook.com/bri
 
 ## Video links
 
-- Comming soon
+- YouTube: https://youtu.be/cDagUpbr9y8?si=3FtzovCrdrI4lbbP
+- Facebook: https://www.facebook.com/brightyouthacademy/videos/345234187937362/
