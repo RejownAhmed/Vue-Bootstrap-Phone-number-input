@@ -2,10 +2,6 @@
 import countryCodePicker from "./countryCodePicker.vue";
 import { ref, watch } from "vue";
 
-const props = defineProps({
-    placeholder: String
-});
-
 const phoneCountry = defineModel("phoneCountry", {
   type: String,
 });
