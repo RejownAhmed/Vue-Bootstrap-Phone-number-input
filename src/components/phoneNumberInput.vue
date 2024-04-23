@@ -2,6 +2,10 @@
 import countryCodePicker from "./countryCodePicker.vue";
 import { ref, watch } from "vue";
 
+const props = defineProps({
+    placeholder: String
+});
+
 const phoneCountry = defineModel("phoneCountry", {
   type: String,
 });
@@ -23,14 +27,16 @@ const selectCountry = (country) => {
   selectedCountry.value = country;
 };
 
-watch([phoneNumber, selectedCountry], ()=> {
-  if (
-    phoneNumber.value &&
-    phoneNumber.value.length > selectedCountry.value?.dial_code?.length
-  ) {
-    originalNumber.value = phoneNumber.value?.substring(
-      String(selectedCountry.value.dial_code).length,
-      phoneNumber.value.length
+watch([phoneNumber, selectedCountry], ([newPhone, newCountry], [prevPhone, prevCountry])=> {
+  if (newPhone) {
+    originalNumber.value = newPhone.substring(
+      // To prevent the country code selector cutting extra or less part of the whole number
+      // first time the phone number needs to be cut by the newCountry
+      // and from the second time if we remove the previous country dial code this
+      // will be the new original number
+      // To understand this, think practically
+      String(prevCountry ? prevCountry.dial_code : newCountry.dial_code).length,
+      newPhone.length
     );
     updateValues();
   }
